@@ -1,6 +1,6 @@
-#4 Pillars of OOP's
-#Encapsulation
-#Access Modifiers
+# 4 Pillars of OOP's
+# Encapsulation
+# Access Modifiers
 # class A:
 #     def __init__(self,name,age,gender):
 #         self.__name=name#private variable can be accessed inside of ame clas which defines with__
@@ -15,30 +15,43 @@
 # print(a1.display())
 # print(a2.display())
 
-#Abstraction:
-from abc import ABC,abstractmethod
+# Abstraction:
+from abc import ABC, abstractmethod
+
+
 class BankAccount(ABC):
-    def __init__(self,balance):
-        self.__balance=balance
-    def deposit(self,amount):
-        self.__balance+=amount
-    def withdrawal(self,amount):
-        self.__balance-=amount
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdrawal(self, amount):
+        self.__balance -= amount
+
     def getBalance(self):
         return self.__balance
+
     @abstractmethod
     def interestcalc(self):
         pass
+
+
 class SavingAccount(BankAccount):
     def interestcalc(self):
-        return self.balance*0.05
+        return self.balance * 0.05
 
-#Polymorphism:
+
+# Polymorphism:
 class Animal:
     print("Animal Sound")
+
+
 class Dog(Animal):
     def sound(self):
         print("Woof")
+
+
 class Cat(Animal):
     def sound(self):
         print("Meow")
